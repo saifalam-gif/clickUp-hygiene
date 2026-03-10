@@ -8,6 +8,7 @@
   const prevBtn = document.getElementById('prev');
   const nextBtn = document.getElementById('next');
   const counterEl = document.getElementById('counter');
+  const slideNumEl = document.getElementById('slide-num');
   const dotsEl = document.getElementById('dots');
 
   let currentIndex = 0;
@@ -24,7 +25,9 @@
   }
 
   function updateCounter() {
-    counterEl.textContent = `${currentIndex + 1} / ${total}`;
+    const text = `${currentIndex + 1} / ${total}`;
+    counterEl.textContent = text;
+    if (slideNumEl) slideNumEl.textContent = text;
   }
 
   function updateDots() {
